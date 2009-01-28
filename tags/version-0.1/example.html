@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+	"http://www.w3.org/TR/html4/loose.dtd"> 
+<html> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+		<title>Bitly Plugin Example</title> 
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="/js/jquery-1.2.2.min.js"></script> 
+		<script type="text/javascript" src="jquery.bitly.js"></script>
+        <script type="text/javascript">
+        function statsHandler(dat) {
+            console.info(dat);
+        }
+
+        function infoHandler(data) {
+            for(var key in data) {
+                var preview = $('#preview');
+                preview.children().remove();
+                var d = data[key];
+                var longUrl = d.longUrl.replace('http://', '');
+                if( d.contentType == 'text/html') {
+                    preview.css('width', '256px');
+                    var thumb = d.thumbnail.medium;
+                    preview.append('<h1>' + d.htmlTitle + '</h1>');
+                    preview.append('<div>' + d.htmlMetaDescription + '</div>');
+                    if(thumb) {
+                        preview.append('<img src="' + thumb + '"/>');
+                    }
+                }
+                if( d.contentType == 'image/jpeg') {
+                    preview.append('<img src="http://' + longUrl + '"/>');
+                }
+                if( d.contentType == 'audio/mpeg') {
+                    for(var label in d.id3) {
+                        preview.append('<div><span style="float: left;width:70px">' + label + ':</span> ' + d.id3[label] + '</div>');
+                    }
+                    var size = Math.round( d.contentLegth / 1024);
+                    preview.append('<div>Size: ' + size + ' Kb</div>');
+                }
+        
+                if( longUrl.length > 25) {
+                    longUrl = longUrl.substring(0, 25) + '&raquo;';
+                }
+                preview.append('<div>Source: ' + longUrl + '</div>');
+                preview.fadeIn();
+            }
+        }
+
+        $(document).ready( function() {
+            $('div.shortened a').addPreview(infoHandler);
+        });
+        </script>
+    </head>
+    <body>
+        <div class="shortened">
+            <p>Place mouse pointer over link to preview content.</p>
+            <ul>
+                <li>Web page: <a href="http://bit.ly/18YSrx">http://bit.ly/18YSrx</a></li>
+                <li>MP3 file: <a href="http://bit.ly/SdgN">http://bit.ly/SdgN</a></li>
+                <li>Image: <a href="http://bit.ly/jVFH">http://bit.ly/jVFH</a></li>
+            </ul>
+        </div>
+        <form action="" method="post" onsubmit="return false;">
+            <label for="msg">Message (paste text with any number 
+            of web addresses starting with http:// and press Shorten):</label>
+            <br/>
+            <textarea id="msg" cols="50" rows="3"></textarea>
+            <br/>
+            <input type="button" value="Shorten" onclick="$('#msg').shortenUrl()"/>
+        </form>
+        <hr/>
+        <a href="http://bitly.googlecode.com">http://bitly.googlecode.com</a>
+    </body>
+</html>
