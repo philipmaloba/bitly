@@ -27,6 +27,9 @@ Some examples.
   // shorten every URL in <textarea class="message"></textarea>
   $('textarea.message').shortenUrl();
 
+  // hook yourInfoHandler to previewable links
+  $('a.previewable').addPreview(yourInfoHandler);
+
   // pass info about link address to yourInfoHandler
   $('a#link').bitly('info', yourInfoHandler);
 
