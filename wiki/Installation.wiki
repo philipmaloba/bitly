@@ -1,9 +1,7 @@
-#summary Installation instructions and usage.
+#summary Installation instructions.
 #labels Featured,Phase-Deploy
 
   # [http://code.google.com/p/bitly/downloads/detail?name=bitly.zip Download]
   # Unzip into web server root directory.
   # Edit `config.php`.
-  # Open `http://your-server/bitly/example.html` in your web browser.
-
-Examine [http://code.google.com/p/bitly/source/browse/trunk/example.html example.html source].
+  # It's done. Open `http://your-server/bitly/example.html` in your web browser.
