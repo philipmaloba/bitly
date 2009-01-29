@@ -1,7 +1,7 @@
 #summary Usage examples
 #labels Featured,Phase-Deploy
 
-==JavaScript usage:==
+===JavaScript usage===
 
 Include jQuery library and plugin files in your header.
 
@@ -35,7 +35,7 @@ Some examples.
 
 }}}
 
-==PHP usage:==
+===PHP usage:===
 
 You may also use Bitly class alone on your server side.
 
