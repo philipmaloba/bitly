@@ -1,8 +1,6 @@
 #summary Installation instructions and usage.
 #labels Featured,Phase-Deploy
 
-==Installation==
-
   # [http://code.google.com/p/bitly/downloads/detail?name=bitly.zip Download]
   # Unzip into web server root directory.
   # Edit `config.php`.
