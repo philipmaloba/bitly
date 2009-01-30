@@ -6,3 +6,5 @@
   # Edit `config.php`.
   # Edit `example.html` header to point to your jQuery location
   # It's done. Open `http://your-server/bitly/example.html` in your web browser.
+
+Now look at some usage [http://code.google.com/p/bitly/wiki/Usage examples].
