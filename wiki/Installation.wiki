@@ -1,7 +1,7 @@
 #summary Installation instructions.
 #labels Featured,Phase-Deploy
 
-  # [http://code.google.com/p/bitly/downloads/detail?name=bitly.zip Download]
+  # [http://code.google.com/p/bitly/downloads Download]
   # Unzip into web server root directory.
   # Edit `config.php`.
   # Edit `example.html` header to point to your jQuery location
