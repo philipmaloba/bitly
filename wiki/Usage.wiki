@@ -8,6 +8,7 @@ Include jQuery library and plugin files in your header.
 {{{
 
   <script type="text/javascript" src="bitly/jquery.bitly.js"></script>
+  <link rel="stylesheet" type="text/css" href="/bitly/css/styles.css">
 
 }}}
 
