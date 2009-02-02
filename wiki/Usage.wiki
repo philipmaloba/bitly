@@ -7,7 +7,7 @@ Include jQuery library and plugin files in your header.
 
 {{{
 
-  <script type="text/javascript" src="bitly/jquery.bitly.js"></script>
+  <script type="text/javascript" src="/bitly/jquery.bitly.js"></script>
   <link rel="stylesheet" type="text/css" href="/bitly/css/styles.css">
 
 }}}
@@ -17,7 +17,7 @@ Setup.
 {{{
 
   // path to bridge
-  $.fn.bitly.defaults.url = 'bitly/bitly.php';
+  $.fn.bitly.defaults.url = '/bitly/bitly.php';
 
 }}}
 
@@ -42,8 +42,9 @@ You may also use Bitly class alone on your server side.
 
 {{{
   <?php
-  include('lib/bitly.class.php');
+  include('bitly/lib/bitly.class.php');
   $bitly = new Bitly($login, $apiKey);
-  $shortUrl = $bitly->shortenSingle($longUrl);
+  // pass message containing any number of long URLs.
+  $shortUrl = $bitly->shortenSingle($message);
   ?>
 }}}
