@@ -43,7 +43,7 @@ You may also use Bitly class alone on your server side.
 {{{
   <?php
   include('bitly/lib/bitly.class.php');
-  $bitly = new Bitly($login, $apiKey);
+  $bitly = new Bitly($your_login, $your_apiKey);
   // pass message containing any number of long URLs.
   $shortUrl = $bitly->shortenSingle($message);
   ?>
